@@ -33,6 +33,7 @@ spec:
       {{- end }}
       {{- end }}
     spec:
+      serviceAccountName: {{ include "cp-kafka-connect.serviceAccountName" . }}
       containers:
         {{- if .Values.prometheus.jmx.enabled }}
         - name: prometheus-jmx-exporter
